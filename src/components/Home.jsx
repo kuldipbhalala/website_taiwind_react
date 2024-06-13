@@ -32,7 +32,6 @@ const Home = ({ rate, reviews }) => {
         }else{
             navigate("/home");
         }
-        console.log(token , "token123");
         getApiData();
     }, [])
 
