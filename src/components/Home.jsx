@@ -21,9 +21,8 @@ const Home = ({ rate, reviews }) => {
         } catch (error) {
             console.log(error);
         }
-    }
+    }   
 
-    
     useEffect(() => {
      
        let token =  localStorage.getItem("token")
