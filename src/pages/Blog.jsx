@@ -151,8 +151,7 @@ function Blog() {
                                 <button className="text-[#6C7275] xl:text-[16px]">Signup</button>
                             </div>
                         </div>
-                        <div className="border-2 cursor-pointer border-[#6C727580]  md:top-[85%] lg:left-[35%]  absolute lg:top-[80%] xl:left-[41%] top-[95%] xl:top-[65%] w-[40%] lg:w-[30%] xl:w-[19%] left-[30%]">
-                        </div>
+                        <div className="border-2 cursor-pointer border-[#6C727580] md:top-[85%] lg:left-[35%] absolute lg:top-[80%] xl:left-[41%] top-[95%] xl:top-[65%] w-[40%] lg:w-[30%] xl:w-[18%] left-[30%]"></div>
                     </div>
                 </section>
             </main>

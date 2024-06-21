@@ -49,9 +49,6 @@ function MyAccount() {
                                 <p className="my-4 text-[#6C7275] font-[600]">Address</p>
                                 <p className="my-4 text-[#6C7275] font-[600]">Orders</p>
                                 <p className="my-4 text-[#6C7275] font-[600]">Wishlist</p>
-                                <button className="bg-black hover:bg-black text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
-                                    Log Out
-                                </button>
                             </div>
                         </div>
                     </div>

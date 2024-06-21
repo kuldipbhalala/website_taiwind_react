@@ -47,7 +47,7 @@ function Contact() {
                                 <button className="underline underline-offset-8 font-[500] flex my-7">Shop Now
                                     <svg className="w-4 h-4 ml-2 mt-[6px]" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                                         xmlns="http://www.w3.org/2000/svg">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
+                                        <path strokeLinecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3">
                                         </path>
                                     </svg>
                                 </button>

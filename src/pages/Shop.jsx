@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import baseUrl from './axios2';
+
 import Star from './Star';
+import baseUrl from './axios/axios2';
 
 function Shop({ rate, reviews }) {
     const [shopProduct, setProduct] = useState([]);
@@ -59,7 +60,7 @@ function Shop({ rate, reviews }) {
 
                 <section>
                     <div className="container mx-auto pt-7">
-                        <div className="grid md:grid-cols-4 md:grid-cols-2 md:gap-[0px] lg:gap-[50px] sm:grid-cols-1 grid-cols-1 justify-between">
+                        <div className="grid md:grid-cols-4  md:gap-[0px] lg:gap-[50px] sm:grid-cols-1 grid-cols-1 justify-between">
                             <div className="hidden md:block">
                                 <h2 className="text-[18px] font-semibold pb-5">Filter</h2>
                                 <p className="font-semibold pb-2">CATEGORIES</p>

@@ -1,12 +1,16 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import loginUrl from './axios2';
+import loginUrl from '../axios/axios2';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function SignIn() {
+
+function SignIn({credData,setCredData,isRegister, setIsRegister}) {
     const navigate = useNavigate();
+    
     const [username, setUsername] = useState("");
-    console.log(username , "username");
+
     const [password, setPassword] = useState("");
     console.log(password , "password");
 
@@ -21,20 +25,28 @@ function SignIn() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
+
         try {
-            const value = await axios.post("https://fakestoreapi.com/auth/login", {
-                username: username,
-                password: password
-            });
-            const token = value.data.token;
-            localStorage.setItem("token", token);
-            localStorage.setItem("username", username);
-            navigate("/Home");
+            const data = localStorage.getItem("credentialData")
+           const value = JSON.parse(data)?.filter((data)=>{return data?.username===username &&data?.password===password});
+
+           if (value?.length>0) {
+               const token = value?.[0]?.username+value?.[0]?.password;
+               localStorage.setItem("token", credData);
+               console.log(token , "token");
+               navigate("/Home");
+            }
+            else{
+            toast.error("Please valid username password ");
+                
+            }
+        
         } catch (error) {
-            alert("please valid username password ")
-            console.error('Error occurred:', error);
+            toast.error("Please valid username password ");
         }
     };
+
+
 
     return (
         <div>
@@ -46,10 +58,22 @@ function SignIn() {
                 <div className="container py-5 px-5 md:pl-[50px] lg:pt-[8.75rem]">
                     <div>
                         <h2 className="text-3xl font-semibold py-4">Sign In</h2>
-                        <p className="text-[#6C7275]">Don’t have an account yet? <span className="text-[#38CB89] font-semibold">Sign Up</span></p>
+                        <p className="text-[#6C7275]">Don’t have an account yet? <span onClick={()=>setIsRegister(true)}  className="text-[#38CB89] font-semibold cursor-pointer">Sign Up</span></p>
                     </div>
 
                     <form onSubmit={handleSubmit}>
+                    <ToastContainer
+                        position="top-right"
+                        autoClose={5000}
+                        hideProgressBar={false}
+                        newestOnTop={false}
+                        closeOnClick
+                        rtl={false}
+                        pauseOnFocusLoss
+                        draggable
+                        pauseOnHover
+                        theme="dark"
+                        />
                         <div className="py-4">
                             <p className="text-[#6C7275]">Your username or email address</p>
                             <input
@@ -78,7 +102,7 @@ function SignIn() {
                             <p className="text-[12px] text-[#6C7275] px-2 pe-7 xl:pe-28">Remember me</p>
                             <p><a href="#">Forgot password?</a></p>
                         </div>
-                        <button type="submit" className="py-2 px-[40%] md:px-[32%] lg:px-[22%] rounded-md bg-black text-white">
+                        <button type="submit"    className="py-2 px-[40%] md:px-[32%] lg:px-[22%] rounded-md bg-black text-white">
                             Sign in
                         </button>
                     </form>

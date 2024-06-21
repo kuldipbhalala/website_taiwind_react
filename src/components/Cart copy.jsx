@@ -5,20 +5,23 @@ import { useNavigate } from 'react-router-dom'
 function Cart() {
     const navigate = useNavigate();
     
-    const [blackproduct , setBlackProduct] = useState(0)
-    const [redproduct , setRedproduct] = useState(0)
-    const [blueproduct , setBlueproduct] = useState(0)
+    const [blackproduct , setBlackProduct] = useState(1)
+    const [redproduct , setRedproduct] = useState(1)
+    const [blueproduct , setBlueproduct] = useState(1)
 
+    const [price , setPrice] = useState(190) 
 
 
     const blackminusPrduct = () => {
         if(blackproduct > 0){
             setBlackProduct( blackproduct - 1)
+            setPrice(blackproduct - price)
         }
     }
 
     const plusblackProduct = () => {
         setBlackProduct(blackproduct + 1)
+        setPrice(blackproduct + price)
     }
     
     const minuspPoduct = () => {
@@ -41,9 +44,6 @@ function Cart() {
 const plueblueproduct = () => {
     setBlueproduct(blueproduct + 1)
 }
-
-
-
 
 
     return (
@@ -87,7 +87,7 @@ const plueblueproduct = () => {
                             </div>
                         </div>
                         <div className="relative flex justify-center">
-                            <span className="absolute w-[15%] md:left-[5%] md:w-[22%] lg:left-[12%] lg:w-[20%]  xl:left-[18%] xl:w-[15%] left-[13%] right-[1%] inset-x-0  h-[2px] bg-black" />
+                            <span className="absolute w-[15%] md:left-[5%] md:w-[22%] lg:left-[12%] lg:w-[20%]  xl:left-[21%] xl:w-[10%] left-[13%] right-[1%] inset-x-0  h-[2px] bg-black" />
                         </div>
                     </div>
                 </section>
@@ -177,7 +177,7 @@ const plueblueproduct = () => {
                                     </div>
                                     <div className="flex">
                                         <div className="pl-12 mb-12 pt-1 md:pl-0 md:mb-0">
-                                            <p className="font-[600] mb-1">$19.00</p>
+                                            <p className="font-[600] mb-1">{price}</p>
                                             <div className="pl-4 md:hidden">
                                                 <span className="flex text-[#6C7275] font-[600] text-[14px]"> <img src="/assets/Img/Line.png" alt className="cursor-pointer" />
                                                     <p className="hidden md:block">Remove</p>
@@ -235,7 +235,7 @@ const plueblueproduct = () => {
                                     </div>
                                     <div className="flex">
                                         <div className="pl-12 mb-12 pt-1 md:pl-0 md:mb-0">
-                                            <p className="font-[600] mb-1">$19.00</p>
+                                            <p className="font-[600] mb-1">{price}</p>
                                             <div className="pl-4 md:hidden">
                                                 <span className="flex text-[#6C7275] font-[600] text-[14px]"> <img src="/assets/Img/Line.png" alt className="cursor-pointer" />
                                                     <p className="hidden md:block">Remove</p>
@@ -293,7 +293,7 @@ const plueblueproduct = () => {
                                     </div>
                                     <div className="flex">
                                         <div className="pl-12 mb-12 pt-1 md:pl-0 md:mb-0">
-                                            <p className="font-[600] mb-1">$19.00</p>
+                                            <p className="font-[600] mb-1">{price}</p>
                                             <div className="pl-4 md:hidden">
                                                 <span className="flex text-[#6C7275] font-[600] text-[14px]"> <img src="/assets/Img/Line.png" alt className="cursor-pointer" />
                                                     <p className="hidden md:block">Remove</p>

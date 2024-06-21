@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import baseUrl from './axios2';
-import Star from './Star';
+import baseUrl from '../axios/axios2';
+import Star from '../Star';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,26 +13,29 @@ const Home = ({ rate, reviews }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
 
-
     const getApiData = async () => {
         try {
             const response = await axios.get(`${baseUrl}?limit=5`);
             setProduct(response.data);
         } catch (error) {
-            console.log(error);
+            console.log(error , "error");
         }
     }   
 
     useEffect(() => {
      
-       let token =  localStorage.getItem("token")
-       if(!token){
-            navigate("/");
-        }else{
-            navigate("/home");
-        }
+    //    let token =  localStorage.getItem("token")
+    //    if(!token){
+    //         navigate("/");
+    //     }else{
+    //         navigate("/home");
+    //     }
+
+    
         getApiData();
     }, [])
+
+
 
 
     const goToPrevSlide = () => {
