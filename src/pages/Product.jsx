@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Product() {
-
+    const navigate = useNavigate();
     const [coutproduct, setCoutproduct] = useState(0)
 
 
@@ -158,8 +159,8 @@ function Product() {
                                             <p className="text-[18px] "> Wishlist</p>
                                         </div>
                                     </div>
-                                    <div className="w-[280px] h-[40px] md:w-[385px] md:h-[52px] flex justify-center cursor-pointer items-center text-[white] rounded-[8px] gap-[8px] bg-[#141718]">
-                                        <a href="Cart.html"> Add to Cart</a>
+                                    <div  onClick={() => navigate("/cart")} className="w-[280px] h-[40px] md:w-[385px] md:h-[52px] flex justify-center cursor-pointer items-center text-[white] rounded-[8px] gap-[8px] bg-[#141718]">
+                                     Add To Cat
                                     </div>
                                     <div className="border-[1px] cursor-pointer my-8 border-[#E8ECEF] w-[99%]" />
                                     <div className="lg:w-[450px] lg:h-[96px]">
@@ -310,8 +311,8 @@ function Product() {
                         </div>
                     </div>
                     <div className="py-6 text-center">
-                        <button className="py-1 px-9 border-black  border hover:bg-black hover:text-white rounded-full ">
-                            <a href="CheckOut.html">Show more</a></button>
+                        <button onClick={() => navigate("/checkOut")} className="py-1 px-9 border-black  border hover:bg-black hover:text-white rounded-full ">
+                             Show more</button>
                     </div>
                 </div>
 

@@ -1,17 +1,18 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
-import Home from './components/Home'
-import Header from './components/Header'
-import Footercomponent from './components/Footercomponent'
-import Shop from './components/Shop'
-import Product from './components/Product'
-import Blog from './components/Blog'
-import Contact from './components/Contact'
-import MyAccount from './components/MyAccount'
-import Cart from './components/Cart'
-import CheckOut from './components/CheckOut'
-import OrderComplete from './components/OrderComplete'
-import SignIn from './components/SignIn'
-// import Signup from './components/Signup'
+import Header from './pages/CommonPage/Header'
+import Footercomponent from './pages/CommonPage/Footercomponent'
+
+import Home from './pages/Home/Home'
+import Shop from './pages/Shop'
+import Product from './pages/Product'
+import Blog from './pages/Blog'
+import Contact from './pages/Contact'
+import MyAccount from './pages/MyAccount/MyAccount'
+import Cart from './pages/Cart/Cart'
+import CheckOut from './pages/Cart/CheckOut'
+import OrderComplete from './pages/OrderComplete/OrderComplete'
+import Auth from './pages/SignIn/Auth'
+
 
 function App() {
  
@@ -29,7 +30,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkOut" element={<CheckOut />} />
           <Route path="/OrderComplete" element={<OrderComplete />} />
-          <Route path="/" element={<SignIn />} />
+          <Route path="/" element={<Auth />} />
           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
         <Footercomponent />
