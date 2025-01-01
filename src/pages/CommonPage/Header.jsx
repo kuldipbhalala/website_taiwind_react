@@ -77,7 +77,7 @@ const location=useLocation();
         <div className='container mx-auto py-3'>
             <div className='flex justify-between items-center'>
                 <div className='mx-4 md:mx-0'>
-                    <h1 className='font-[500] text-[24px]'>3legant.</h1>
+                    <h1 className='font-[500] text-[24px] cursor-pointer'>3legant.</h1>
                 </div>
                 <nav>
                     <ul className='hidden md:flex'>
