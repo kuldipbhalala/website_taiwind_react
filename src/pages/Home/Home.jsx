@@ -59,7 +59,7 @@ const Home = ({ rate, reviews }) => {
                                     className="flex transition-transform duration-500"
                                     style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                                 >
-                                    <img src="/assets/Img/Paste image.png" alt="image" className="image min-w-[100%]" />
+                                    {/* <img src="/assets/Img/Paste image.jpeg" alt="image" className="image min-w-[100%]" /> */}
                                     <img src="/assets/Img/Paste image - 2.png" alt="image" className="image min-w-[100%]" />
                                     <img src="/assets/Img/Paste image -3.png" alt="image" className="image min-w-[100%]" />
                                 </div>
